@@ -4,8 +4,6 @@ if (!defined('ENT_SUBSTITUTE')) {
     define('ENT_SUBSTITUTE', 8);
 }
 
-include_once dirname(__FILE__).'/../Markdown/markdown.php';
-
 class Twig_Extensions_Extension_Markdown extends Twig_Extension
 {
     public function getTokenParsers()
@@ -34,6 +32,6 @@ class Twig_Extensions_Extension_Markdown extends Twig_Extension
 
 function twig_markdown($data)
 {
-    return Markdown($data);
+    return \OperaCore\Helper::markdown($data);
 }
 

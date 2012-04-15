@@ -1,6 +1,5 @@
 <?php
 
-include_once dirname(__FILE__).'/../Markdown/markdown.php';
 /**
  * Represents a markdown node.
  *
@@ -29,7 +28,7 @@ class Twig_Extensions_Node_Markdown extends Twig_Node
             ->write("\$string = <<< MARKDOWN\n")
             ->write($this->getNode('body')->getAttribute('data'))
             ->write("\nMARKDOWN;\n")
-	        ->write("echo Markdown(\$string);\n")
+	        ->write("echo \\OperaCore\\Helper::markdown(\$string);\n")
         ;
     }
 }
