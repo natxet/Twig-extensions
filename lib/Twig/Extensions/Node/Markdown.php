@@ -1,5 +1,6 @@
 <?php
 
+include_once dirname(__FILE__).'/../Markdown/markdown.php';
 /**
  * Represents a markdown node.
  *
@@ -23,8 +24,6 @@ class Twig_Extensions_Node_Markdown extends Twig_Node
      */
     public function compile(Twig_Compiler $compiler)
     {
-        include_once dirname(__FILE__).'/../Markdown/markdown.php';
-
         $compiler
             ->addDebugInfo($this)
             ->write("\$string = <<< MARKDOWN\n")
